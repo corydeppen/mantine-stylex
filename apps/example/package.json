@@ -1,0 +1,39 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "dev": "pnpm gen:stylex && vite",
+    "format:fix": "oxfmt --write",
+    "format": "oxfmt --check",
+    "gen:stylex": "mantine-stylex src/theme.ts -o src/vars.stylex.ts",
+    "lint:fix": "oxlint --fix",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mantine/core": "^8.3.11",
+    "@mantine/hooks": "^8.3.11",
+    "@stylexjs/stylex": "^0.17.4",
+    "mantine-stylex": "workspace:*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@stylexjs/unplugin": "^0.17.4",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "oxfmt": "^0.22.0",
+    "oxlint": "^1.37.0",
+    "postcss": "^8.5.6",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  }
+}

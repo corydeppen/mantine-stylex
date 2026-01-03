@@ -1,0 +1,63 @@
+{
+  "name": "mantine-stylex",
+  "version": "0.1.0",
+  "description": "StyleX integration for Mantine theme",
+  "keywords": [
+    "mantine",
+    "react",
+    "stylex"
+  ],
+  "homepage": "https://github.com/corydeppen/mantine-stylex#readme",
+  "bugs": {
+    "url": "https://github.com/corydeppen/mantine-stylex/issues"
+  },
+  "license": "MIT",
+  "author": "Cory Deppen <cory@deppen.us>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corydeppen/mantine-stylex.git"
+  },
+  "bin": {
+    "mantine-stylex": "./dist/run.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./run": "./dist/run.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "format:fix": "oxfmt --write",
+    "format": "oxfmt --check",
+    "lint:fix": "oxlint --fix",
+    "lint": "oxlint",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "tiny-invariant": "^1.3.3"
+  },
+  "devDependencies": {
+    "@mantine/core": "^8.3.11",
+    "@types/node": "^24.10.1",
+    "bumpp": "^10.3.2",
+    "oxfmt": "^0.22.0",
+    "oxlint": "^1.37.0",
+    "tsdown": "^0.18.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^8"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "mantine-stylex-root",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm -F mantine-stylex run build",
+    "dev:example": "pnpm -F example run dev",
+    "format:fix": "pnpm -r run format:fix",
+    "format": "pnpm -r run format",
+    "lint:fix": "pnpm -r run lint:fix",
+    "lint": "pnpm -r run lint",
+    "publish": "pnpm -F mantine-stylex publish",
+    "typecheck": "pnpm -r run typecheck",
+    "update": "pnpm -r up -iL"
+  },
+  "keywords": [],
+  "author": "Cory Deppen <cory@deppen.us>",
+  "license": "ISC",
+  "devDependencies": {
+    "oxfmt": "^0.22.0",
+    "oxlint": "^1.37.0",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.27.0"
+}
