@@ -1,7 +1,10 @@
 import { Title, Text, Anchor } from "@mantine/core";
 import * as stylex from "@stylexjs/stylex";
 
-import { colors, smallerThan } from "../vars.stylex";
+// importing using an alias doesn't work (yet)
+// https://github.com/facebook/stylex/issues /40
+// import { colors } from "@/mantine.stylex";
+import { colors } from "../mantine.stylex";
 
 export function Welcome() {
   return (
@@ -26,12 +29,17 @@ export function Welcome() {
 
 const styles = stylex.create({
   title: {
-    color: `light-dark(${colors.black}, ${colors.white})`,
+    color: colors.text,
     fontWeight: 900,
     fontSize: {
-      // functions currently aren't supported by StyleX
+      // functions aren't supported (yet)
+      // https://github.com/facebook/stylex/issues /1358
+      // default: rem(100),
       default: "calc(6.25rem * var(--mantine-scale))" /*rem(100)*/,
-      [smallerThan.md]: "calc(3.125rem * var(--mantine-scale))" /*rem(50)*/,
+      // computed property keys aren't reliable (yet)
+      // https://github.com/facebook/stylex/issues /1414
+      // [smallerThan.md]: rem(50),
+      "@media (max-width: 62em)": "calc(3.125rem * var(--mantine-scale))",
     },
     letterSpacing: "calc(-0.125rem * var(--mantine-scale))" /*rem(-2)*/,
   },

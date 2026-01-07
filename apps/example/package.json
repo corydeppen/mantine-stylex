@@ -8,7 +8,7 @@
     "dev": "pnpm gen:stylex && vite",
     "format:fix": "oxfmt --write",
     "format": "oxfmt --check",
-    "gen:stylex": "mantine-stylex src/theme.ts -o src/vars.stylex.ts",
+    "gen:stylex": "mantine-stylex src/theme.ts -o src/mantine.stylex.ts",
     "lint:fix": "oxlint --fix",
     "lint": "oxlint",
     "preview": "vite preview",

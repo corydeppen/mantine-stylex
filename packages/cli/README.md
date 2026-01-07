@@ -5,7 +5,7 @@ Write styles in your application using [StyleX](https://stylexjs.com/) and easil
 ## Installation
 
 ```sh
-pnpm install mantine-stylex
+pnpm add -D mantine-stylex
 ```
 
 Learn more about [thinking in StyleX](https://stylexjs.com/docs/learn/thinking-in-stylex) and [how to install](https://stylexjs.com/docs/learn/installation) it in your project.
@@ -46,10 +46,9 @@ pnpx mantine-stylex src/styles/theme.ts -o src/styles/vars.stylex.ts
 The generated module will contain exports that allow Mantine variables to be used in a type-safe manner when defining styles:
 
 ```ts
-// src/styles/vars.stylex.ts
+// src/styles/mantine.stylex.ts
 export const colors = stylex.defineConsts({
-  white: "var(--mantine-color-white)",
-  black: "var(--mantine-color-black)",
+  text: "var(--mantine-color-text)",
   // ...
 });
 ```
@@ -60,7 +59,7 @@ Use the StyleX constants in your application:
 // src/Welcome/Welcome.tsx
 import { Title } from "@mantine/core";
 import * as stylex from "@stylexjs/stylex";
-import { colors } from "@/styles/vars.stylex";
+import { colors } from "@/styles/mantine.stylex";
 
 export function Welcome() {
   return <Title {...stylex.props(styles.title)}>Welcome</Title>;
@@ -68,9 +67,8 @@ export function Welcome() {
 
 const styles = stylex.create({
   title: {
-    color: `light-dark(${colors.black}, ${colors.white})`,
+    color: colors.text,
     fontWeight: 900,
-    letterSpacing: "calc(-0.125rem * var(--mantine-scale))",
   },
 });
 ```
