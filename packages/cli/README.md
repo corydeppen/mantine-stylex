@@ -10,6 +10,10 @@ pnpm add -D mantine-stylex
 
 Learn more about [thinking in StyleX](https://stylexjs.com/docs/learn/thinking-in-stylex) and [how to install](https://stylexjs.com/docs/learn/installation) it in your project.
 
+### DevTools
+
+The [StyleX DevTools](https://chromewebstore.google.com/detail/stylex-devtools/pfcoadoepdjlhhnchklcinajnmmninem) can be used to inspect atomic styles added by StyleX.
+
 ## Usage
 
 Create a Mantine theme file:
@@ -32,6 +36,9 @@ const theme = createTheme({
       "#003a8c",
       "#002766",
     ],
+  },
+  fontWeights: {
+    black: "900",
   },
   // ...
 });
@@ -59,7 +66,7 @@ Use the StyleX constants in your application:
 // src/Welcome/Welcome.tsx
 import { Title } from "@mantine/core";
 import * as stylex from "@stylexjs/stylex";
-import { colors } from "@/styles/mantine.stylex";
+import { colors, fontWeights } from "@/styles/mantine.stylex";
 
 export function Welcome() {
   return <Title {...stylex.props(styles.title)}>Welcome</Title>;
@@ -68,7 +75,7 @@ export function Welcome() {
 const styles = stylex.create({
   title: {
     color: colors.text,
-    fontWeight: 900,
+    fontWeight: fontWeights.black,
   },
 });
 ```

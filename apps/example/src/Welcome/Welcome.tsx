@@ -4,7 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 // importing using an alias doesn't work (yet)
 // https://github.com/facebook/stylex/issues /40
 // import { colors } from "@/mantine.stylex";
-import { colors } from "../mantine.stylex";
+import { colors, fontWeights } from "../mantine.stylex";
 
 export function Welcome() {
   return (
@@ -30,7 +30,7 @@ export function Welcome() {
 const styles = stylex.create({
   title: {
     color: colors.text,
-    fontWeight: 900,
+    fontWeight: fontWeights.black,
     fontSize: {
       // functions aren't supported (yet)
       // https://github.com/facebook/stylex/issues /1358
