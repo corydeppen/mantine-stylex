@@ -313,6 +313,13 @@ export const fontSizes = stylex.defineConsts({
   xl: "var(--mantine-font-size-xl)",
 });
 
+export const fontWeights = stylex.defineConsts({
+  regular: "var(--mantine-font-weight-regular)",
+  medium: "var(--mantine-font-weight-medium)",
+  bold: "var(--mantine-font-weight-bold)",
+  black: "var(--mantine-font-weight-black)",
+});
+
 export const lineHeights = stylex.defineConsts({
   xs: "var(--mantine-line-height-xs)",
   sm: "var(--mantine-line-height-sm)",

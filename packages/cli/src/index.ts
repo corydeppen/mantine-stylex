@@ -26,6 +26,8 @@ export function getThemeVariables(theme: MantineThemeOverride) {
 
   const fontSizes = getSizeVariables(mergedTheme, "fontSizes", "font-size");
 
+  const fontWeights = getSizeVariables(mergedTheme, "fontWeights", "font-weight");
+
   const lineHeights = getSizeVariables(mergedTheme, "lineHeights", "line-height");
 
   const shadows = getSizeVariables(mergedTheme, "shadows", "shadow");
@@ -110,6 +112,7 @@ export function getThemeVariables(theme: MantineThemeOverride) {
     breakpoints,
     spacing,
     fontSizes,
+    fontWeights,
     lineHeights,
     shadows,
     radius,
@@ -170,8 +173,17 @@ export async function generate(path: string, options: Options) {
     theme,
     "No theme found in the input file; please ensure the file exports a valid theme object",
   );
-  const { breakpoints, colors, fontSizes, headings, lineHeights, radius, shadows, spacing } =
-    getThemeVariables(theme);
+  const {
+    breakpoints,
+    colors,
+    fontSizes,
+    fontWeights,
+    headings,
+    lineHeights,
+    radius,
+    shadows,
+    spacing,
+  } = getThemeVariables(theme);
 
   const mergedTheme = mergeMantineTheme(DEFAULT_THEME, theme);
 
@@ -189,6 +201,7 @@ ${writeStyle("colors", colors)}
 ${writeStyle("breakpoints", breakpoints)}
 ${writeStyle("spacing", spacing)}
 ${writeStyle("fontSizes", fontSizes)}
+${writeStyle("fontWeights", fontWeights)}
 ${writeStyle("lineHeights", lineHeights)}
 ${writeStyle("shadows", shadows)}
 ${writeStyle("radius", radius)}
