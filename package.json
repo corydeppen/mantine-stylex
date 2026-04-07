@@ -18,8 +18,8 @@
   "author": "Cory Deppen <cory@deppen.us>",
   "license": "ISC",
   "devDependencies": {
-    "oxfmt": "^0.22.0",
-    "oxlint": "^1.37.0",
+    "oxfmt": "^0.44.0",
+    "oxlint": "^1.59.0",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.27.0"

@@ -1,12 +1,13 @@
+import fs from "node:fs";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+
 import {
   DEFAULT_THEME,
   mergeMantineTheme,
   type MantineTheme,
   type MantineThemeOverride,
 } from "@mantine/core";
-import fs from "node:fs";
-import { resolve } from "node:path";
-import { pathToFileURL } from "node:url";
 import invariant from "tiny-invariant";
 
 function getSizeVariables(theme: MantineTheme, themeKey: keyof MantineTheme, name: string) {

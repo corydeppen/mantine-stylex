@@ -1,5 +1,6 @@
-import { cac } from "cac";
 import process from "node:process";
+
+import { cac } from "cac";
 
 import pkg from "../package.json" with { type: "json" };
 import { generate, type Options } from "./index";
