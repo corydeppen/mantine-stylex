@@ -125,7 +125,7 @@ export interface Options {
   output: string;
 }
 
-function writeStyle(name: string, vars: any) {
+function writeStyle(name: string, vars: Record<string, string>) {
   return `
 export const ${name} = stylex.defineConsts({
   ${Object.entries(vars)
